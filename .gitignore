@@ -1,0 +1,28 @@
+# エージェント・Claude設定
+.agents/
+.claude/
+AGENTS.md
+
+# 管理ディレクトリ（ローカル作業用）
+TASKS/
+DEBUG/
+CLIENT/
+WORK/
+DELETE/
+app-ui/
+
+# 環境・設定
+ENV/
+.env
+.env.local
+.env.*.local
+
+# 仕様書（読み取り専用）
+contract-risk-checker-spec.md
+
+# テストスクリプト
+test/
+
+# OS
+.DS_Store
+Thumbs.db
