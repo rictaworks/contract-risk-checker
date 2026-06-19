@@ -1,0 +1,11 @@
+{
+  "common": {
+    "title": "契約リスクチェッカー"
+  },
+  "home": {
+    "welcome": "ログイン中: {name}",
+    "dropzone_active": "ファイルをここにドロップ...",
+    "dropzone_inactive": "ここに契約書ファイルをドラッグ＆ドロップするか、クリックしてファイルを選択してください",
+    "file_limit": "対応形式: PDF, TXT, DOCX (最大 10MB)"
+  }
+}

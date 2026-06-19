@@ -1,0 +1,11 @@
+{
+  "common": {
+    "title": "Contract Risk Checker"
+  },
+  "home": {
+    "welcome": "Logged in as: {name}",
+    "dropzone_active": "Drop the file here...",
+    "dropzone_inactive": "Drag & drop your contract file here, or click to select",
+    "file_limit": "Supported formats: PDF, TXT, DOCX (max 10MB)"
+  }
+}

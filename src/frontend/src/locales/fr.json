@@ -1,0 +1,11 @@
+{
+  "common": {
+    "title": "Détecteur de Risques de Contrat"
+  },
+  "home": {
+    "welcome": "Connecté en tant que : {name}",
+    "dropzone_active": "Déposez le fichier ici...",
+    "dropzone_inactive": "Glissez-déposez votre contrat ici, ou cliquez pour sélectionner",
+    "file_limit": "Formats acceptés : PDF, TXT, DOCX (max 10 Mo)"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "common": {
+    "title": "合同风险检查器"
+  },
+  "home": {
+    "welcome": "当前登录：{name}",
+    "dropzone_active": "请将文件拖放到此处...",
+    "dropzone_inactive": "将合同文件拖放到此处，或点击选择文件",
+    "file_limit": "支持格式：PDF、TXT、DOCX（最大 10MB）"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "common": {
+    "title": "Verificador de Riesgos de Contrato"
+  },
+  "home": {
+    "welcome": "Sesión iniciada como: {name}",
+    "dropzone_active": "Suelta el archivo aquí...",
+    "dropzone_inactive": "Arrastra tu contrato aquí o haz clic para seleccionar",
+    "file_limit": "Formatos admitidos: PDF, TXT, DOCX (máx. 10 MB)"
+  }
+}
