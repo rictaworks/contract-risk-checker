@@ -80,7 +80,7 @@ Rails.application.configure do
   # RAILS_HOST に Railway/Render のデプロイ URL を設定すること（例: myapp.railway.app）
   config.hosts = [
     ENV["RAILS_HOST"],
-    /\A.*\.rictaworks\.jp\z/,
+    /\A.*\.rictaworks\.jp\z/
   ].compact
 
   # Skip DNS rebinding protection for the default health check endpoint.
