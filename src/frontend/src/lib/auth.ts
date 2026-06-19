@@ -7,7 +7,7 @@ export async function getSessionHelper() {
   if (process.env.DEV_AUTH_BYPASS === 'true') {
     return {
       user: {
-        name: "開発ユーザー",
+        name: "Dev User",
         email: "dev-user@example.com",
         image: null,
       },

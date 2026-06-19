@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
+import { LocaleProvider } from "@/lib/LocaleContext";
+import { HtmlLang } from "@/components/HtmlLang";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,8 +17,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "契約リスクチェッカー | AIによる自動契約書レビュー",
-  description: "契約書をアップロードすると、AIが条項ごとにリスクを自動分析し、リスクスコア・修正提案・レポートを提供します。",
+  title: "Contract Risk Checker | AI-powered Contract Review",
+  description: "Upload your contract and let AI automatically analyze each clause for risks, scores, and suggested revisions.",
 };
 
 export default function RootLayout({
@@ -27,9 +29,12 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        <LocaleProvider>
+          <HtmlLang />
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

@@ -8,40 +8,49 @@ import { faFileContract, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from '@/lib/useTranslation';
 import styles from './page.module.css';
 
+const ACCEPTED_MIME_TYPES = {
+  'application/pdf': ['.pdf'],
+  'text/plain': ['.txt'],
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'],
+};
+
 export default function Home() {
   const { data: session } = useSession();
   const { t } = useTranslation();
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
-    // 契約書ファイルアップロードのプレースホルダー
     console.log('Accepted files:', acceptedFiles);
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    maxSize: 10 * 1024 * 1024, // 10MB
-    multiple: false
+    accept: ACCEPTED_MIME_TYPES,
+    maxSize: 10 * 1024 * 1024,
+    multiple: false,
   });
 
-  // ログイン中ユーザー名の簡易置換
   const welcomeText = t('home.welcome').replace('{name}', session?.user?.name || '');
 
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>
+        <h1 className={styles.title} data-testid="app-title">
           <FontAwesomeIcon icon={faFileContract} className={styles.icon} />
           {t('common.title')}
         </h1>
         {session && (
-          <div className={styles.userStatus}>
+          <div className={styles.userStatus} data-testid="user-status">
             {welcomeText}
           </div>
         )}
       </header>
 
       <main className={styles.main}>
-        <div {...getRootProps()} className={`${styles.dropzone} ${isDragActive ? styles.dropzoneActive : ''}`}>
+        <div
+          {...getRootProps()}
+          className={`${styles.dropzone} ${isDragActive ? styles.dropzoneActive : ''}`}
+          data-testid="dropzone"
+        >
           <input {...getInputProps()} />
           <FontAwesomeIcon icon={faUpload} className={styles.uploadIcon} />
           <p className={styles.dropzoneText}>

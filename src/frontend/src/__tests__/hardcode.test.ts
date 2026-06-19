@@ -1,15 +1,35 @@
 import fs from 'fs';
 import path from 'path';
 
-describe('Hardcoded string checks', () => {
-  it('should not contain raw Japanese characters in page.tsx', () => {
-    const filePath = path.resolve(__dirname, '../app/page.tsx');
-    const content = fs.readFileSync(filePath, 'utf-8');
+const JAPANESE_LITERAL_REGEX = /["'`][^"'`\r\n]*[぀-ヿ一-龯]+[^"'`\r\n]*["'`]/;
 
-    // 同一行内のクォーテーションで囲まれた日本語（ひらがな、カタカナ、漢字）文字列リテラルを検出
-    const japaneseLiteralRegex = /["'`][^"'`\r\n]*[\u3040-\u30ff\u4e00-\u9faf]+[^"'`\r\n]*["'`]/;
-    
-    const hasJapaneseLiteral = japaneseLiteralRegex.test(content);
-    expect(hasJapaneseLiteral).toBe(false);
+const SRC_DIR = path.resolve(__dirname, '..');
+
+function collectFiles(dir: string, ext: string[]): string[] {
+  const result: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory() && entry.name !== 'locales' && entry.name !== '__tests__') {
+      result.push(...collectFiles(full, ext));
+    } else if (entry.isFile() && ext.some(e => entry.name.endsWith(e))) {
+      result.push(full);
+    }
+  }
+  return result;
+}
+
+describe('Hardcoded string checks', () => {
+  const targetFiles = collectFiles(SRC_DIR, ['.tsx', '.ts']).filter(
+    f => !f.includes('LocaleContext') && !f.includes('useTranslation')
+  );
+
+  it.each(targetFiles)('should not contain hardcoded Japanese string literals in %s', (filePath) => {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const lines = content.split('\n');
+    const violations = lines
+      .map((line, i) => ({ line, no: i + 1 }))
+      .filter(({ line }) => JAPANESE_LITERAL_REGEX.test(line));
+
+    expect(violations).toEqual([]);
   });
 });
