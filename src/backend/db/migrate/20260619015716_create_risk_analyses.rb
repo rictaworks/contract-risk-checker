@@ -6,7 +6,7 @@ class CreateRiskAnalyses < ActiveRecord::Migration[8.1]
       t.references :risk_type, null: true, foreign_key: true
       t.text :problem_description
       t.text :suggestion_text
-      t.string :analysis_status, null: false, default: 'PENDING'
+      t.string :analysis_status, null: false, default: "PENDING"
       t.integer :retry_count, default: 0
 
       t.timestamps

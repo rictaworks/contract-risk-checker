@@ -7,7 +7,7 @@ class CreateContracts < ActiveRecord::Migration[8.1]
       t.text :extracted_text
       t.references :contract_type, null: true, foreign_key: true
       t.integer :file_size_bytes
-      t.string :status, null: false, default: 'UPLOADED'
+      t.string :status, null: false, default: "UPLOADED"
 
       t.timestamps
     end
