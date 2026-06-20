@@ -7,5 +7,9 @@
     "dropzone_active": "Déposez le fichier ici...",
     "dropzone_inactive": "Glissez-déposez votre contrat ici, ou cliquez pour sélectionner",
     "file_limit": "Formats acceptés : PDF, TXT, DOCX (max 10 Mo)"
+  },
+  "login": {
+    "subtitle": "L'IA détecte automatiquement les risques du contrat et propose des révisions.",
+    "google_button": "Se connecter avec Google"
   }
 }

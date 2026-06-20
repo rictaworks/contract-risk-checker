@@ -7,5 +7,9 @@
     "dropzone_active": "请将文件拖放到此处...",
     "dropzone_inactive": "将合同文件拖放到此处，或点击选择文件",
     "file_limit": "支持格式：PDF、TXT、DOCX（最大 10MB）"
+  },
+  "login": {
+    "subtitle": "AI自动检测合同风险并提出修改建议。",
+    "google_button": "使用Google账号登录"
   }
 }

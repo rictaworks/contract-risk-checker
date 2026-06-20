@@ -7,5 +7,9 @@
     "dropzone_active": "Suelta el archivo aquí...",
     "dropzone_inactive": "Arrastra tu contrato aquí o haz clic para seleccionar",
     "file_limit": "Formatos admitidos: PDF, TXT, DOCX (máx. 10 MB)"
+  },
+  "login": {
+    "subtitle": "La IA detecta automáticamente los riesgos del contrato y sugiere revisiones.",
+    "google_button": "Iniciar sesión con Google"
   }
 }

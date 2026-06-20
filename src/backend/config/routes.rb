@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      # 後続 Issue で追加
+      post "auth/google", to: "auth#google", format: false
     end
   end
 end
