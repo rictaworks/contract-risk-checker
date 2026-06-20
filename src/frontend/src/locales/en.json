@@ -7,5 +7,9 @@
     "dropzone_active": "Drop the file here...",
     "dropzone_inactive": "Drag & drop your contract file here, or click to select",
     "file_limit": "Supported formats: PDF, TXT, DOCX (max 10MB)"
+  },
+  "login": {
+    "subtitle": "AI automatically detects contract risks and suggests revisions.",
+    "google_button": "Sign in with Google"
   }
 }

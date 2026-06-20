@@ -7,5 +7,9 @@
     "dropzone_active": "ファイルをここにドロップ...",
     "dropzone_inactive": "ここに契約書ファイルをドラッグ＆ドロップするか、クリックしてファイルを選択してください",
     "file_limit": "対応形式: PDF, TXT, DOCX (最大 10MB)"
+  },
+  "login": {
+    "subtitle": "AIが契約書のリスクを自動判定し、修正案を提案します。",
+    "google_button": "Googleアカウントでログイン"
   }
 }

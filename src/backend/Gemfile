@@ -53,6 +53,9 @@ gem "prawn-table"
 # 認証
 gem "jwt"
 
+# レート制限
+gem "rack-attack"
+
 group :development do
   gem "sqlite3"
 end
