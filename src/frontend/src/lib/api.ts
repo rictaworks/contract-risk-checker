@@ -3,7 +3,9 @@ import { getSession, signOut } from "next-auth/react";
 import { redirectToLogin } from "./navigation";
 
 const isDevelopment = process.env.NEXT_PUBLIC_DEV_AUTH_BYPASS === "true";
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+const API_URL = process.env.NODE_ENV !== "production"
+  ? (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001")
+  : process.env.NEXT_PUBLIC_API_URL!;
 
 export const api = axios.create({
   baseURL: API_URL,
